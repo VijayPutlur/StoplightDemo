@@ -6,7 +6,26 @@ info:
     name: Medibank API Support
     url: 'https://attraintegration.stoplight.io'
     email: apisupport@medibank.com.au
-  description: Its claims info
+  description: |-
+    <span style="font-size: 1.5em; color: #5D535E;">
+      <i class="fas fa-robot fa-xs"></i> Update/Delete claims
+    </span>
+
+    Update an existing Claim. A valid `'Claims Request'` is required for updating claim along with authentication.
+
+    More information about required parameters and authentication can be seen below.
+
+
+    Deletes claim for a claim id. A valid `'claimId'` is required to deleting the existing claim.
+
+    More information about required parameters and authentication can be seen below.
+
+    ```bash
+    curl --request PUT \
+      --url https://medibankdemo.stoplight.io:5555/api/claim \
+    curl --request DELETE \
+      --url https://attraintegration.stoplight.io:5555/api/claim \  
+    ```
   license:
     url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
     name: Apache 2.0

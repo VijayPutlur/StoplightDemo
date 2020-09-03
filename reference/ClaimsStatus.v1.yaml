@@ -2,7 +2,20 @@ openapi: 3.0.0
 info:
   title: ClaimsStatus
   version: '1.0'
-  description: Claims Status
+  description: |-
+    <span style="font-size: 1.5em; color: #5D535E;">
+      <i class="fas fa-robot fa-xs"></i> Get/Fetch claims
+    </span>
+
+    Returns a list of claims for Claims.If specific claims are desired, users can specify the `'claimId'` or multiple thereof values in the header.
+
+    More information about required parameters and authentication can be seen below.
+
+    ```bash
+
+    curl --request GET \
+      --url https://medibankdemo.stoplight.io:5555/api/claim
+    ```
   contact:
     name: Medibank API Support
     email: apisupport@medibank.com.au

@@ -2,7 +2,20 @@ openapi: 3.0.0
 info:
   title: ClaimsCreation
   version: '1.0'
-  description: Claims creation
+  description: |-
+    <span style="font-size: 3em; color: #5D535E;">
+      <i class="fas fa-robot fa-2x"></i> <i>Claims creation
+    </i></span> 
+    </br>
+    </br>
+
+    Create a new Claim for the policy. A valid `'Claims Request'` is required for the creation of the Claims.
+    Below is the info on request and other info.
+
+    ```bash
+    curl --request POST \
+      --url https://medibankdemo.stoplight.io/api/claims/create \
+    ```
   contact:
     name: Medibank API Support
     email: apisupport@medibank.com.au
