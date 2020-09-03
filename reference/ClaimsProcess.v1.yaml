@@ -16,7 +16,7 @@ servers:
 paths:
   /api/claim:
     put:
-      summary: ''
+      summary: Update claims
       operationId: put-api-claim
       responses:
         '200':
@@ -119,7 +119,7 @@ paths:
       tags:
         - Claims
     delete:
-      summary: ''
+      summary: Delete claims
       operationId: delete-api-claim
       responses:
         '204':
