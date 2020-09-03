@@ -1,0 +1,59 @@
+title: PolicyDetails
+type: object
+x-examples:
+  PolicyDetails:
+    policyId: 1
+    policyName: Health
+    Product:
+      productId: 1
+      productName: Credit Card
+      productDescription: This is for credit card
+    Preference:
+      id: '123'
+      details: Its user preference
+    Address:
+      addressId: 1
+      address1: Electronic
+      street: city
+      city: Bangalore
+      state: KA
+      country: IND
+      zip: '560000'
+      Contact:
+        mobile: 9999999999
+        emailId: Messi@gmail.com
+        phoneNumber: 9999999999
+  PolicyDetails schema:
+    policyId: 0
+    policyName: string
+    Product:
+      productId: 0
+      productName: string
+      productDescription: string
+    Preference:
+      id: string
+      details: string
+    Address:
+      addressId: 0
+      address1: string
+      street: string
+      city: string
+      state: string
+      country: string
+      zip: string
+      Contact:
+        mobile: 9999999999
+        emailId: string
+        phoneNumber: 0
+description: Its a PolicyDetails data model contains Policy details
+properties:
+  policyId:
+    type: number
+  policyName:
+    type: string
+  Product:
+    $ref: ./product/Product.v1.yaml
+  Preference:
+    $ref: ./Preference.v1.yaml
+  Address:
+    $ref: ../common/Address.v1.yaml

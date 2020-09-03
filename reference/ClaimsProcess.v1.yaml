@@ -1,0 +1,138 @@
+openapi: 3.0.0
+info:
+  title: claims
+  version: '1.0'
+  contact:
+    name: Messi
+  description: Its claims info
+servers:
+  - url: 'http://localhost:3000'
+paths:
+  /api/claim:
+    put:
+      summary: ''
+      operationId: put-api-claim
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../policies/PolicyDetails.v1.yaml
+              examples:
+                Policy Details:
+                  value:
+                    policyId: 1
+                    policyName: Health
+                    Product:
+                      productId: 1
+                      productName: Credit Card
+                      productDescription: This is for credit card
+                    Preference:
+                      id: '123'
+                      details: Its user preference
+                    Address:
+                      addressId: 1
+                      address1: Electronic
+                      street: city
+                      city: Bangalore
+                      state: KA
+                      country: IND
+                      zip: '560000'
+                      Contact:
+                        mobile: 9999999999
+                        emailId: Messi@gmail.com
+                        phoneNumber: 9999999999
+                Policy Details schema:
+                  value:
+                    policyId: 0
+                    policyName: string
+                    Product:
+                      productId: 0
+                      productName: string
+                      productDescription: string
+                    Preference:
+                      id: string
+                      details: string
+                    Address:
+                      addressId: 0
+                      address1: string
+                      street: string
+                      city: string
+                      state: string
+                      country: string
+                      zip: string
+                      Contact:
+                        mobile: 9999999999
+                        emailId: string
+                        phoneNumber: 0
+      description: update
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ../claims/ClaimRequest.v1.yaml
+            examples:
+              Claim Request:
+                value:
+                  claimId: 1
+                  type: health
+                  status: Received
+                  policyId: '1'
+                  ClaimInfo:
+                    id: 0
+                    'submissionDate:': '2019-08-24'
+                    gender: FEMALE
+                    dob: '2019-08-24'
+                    email: Messi@gmail.com
+              Claim Request schema:
+                value:
+                  claimId: 0
+                  type: string
+                  status: string
+                  policyId: string
+                  ClaimInfo:
+                    id: 0
+                    'submissionDate:': '2019-08-24'
+                    gender: FEMALE
+                    dob: '2019-08-24'
+                    email: user@example.com
+      tags:
+        - Claims
+    delete:
+      summary: ''
+      operationId: delete-api-claim
+      responses:
+        '204':
+          description: No Content
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  claimId:
+                    type: number
+                  status:
+                    type: string
+              examples:
+                Delete status:
+                  value:
+                    claimId: 1
+                    status: Received
+                Delete schema:
+                  value:
+                    claimId: 0
+                    status: string
+      description: delete
+      parameters:
+        - schema:
+            type: number
+          in: header
+          name: claimId
+          required: true
+      tags:
+        - Claims
+components:
+  schemas: {}
+tags:
+  - name: Claims

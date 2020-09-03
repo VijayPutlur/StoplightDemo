@@ -1,0 +1,15 @@
+title: Preference.v1
+type: object
+properties:
+  id:
+    type: string
+  details:
+    type: string
+x-examples:
+  Preference:
+    id: '1'
+    details: This is with preference
+  Preference schema:
+    id: string
+    details: string
+description: Its Preference data model contains Preference info.

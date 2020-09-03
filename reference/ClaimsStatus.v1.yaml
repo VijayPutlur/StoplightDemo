@@ -1,0 +1,142 @@
+openapi: 3.0.0
+info:
+  title: ClaimsDemo.v1
+  version: '1.0'
+  description: Claims Demo
+  contact:
+    name: Vijay
+servers:
+  - url: 'http://localhost:3000'
+paths:
+  /api/claim:
+    get:
+      summary: Fetch claims
+      tags:
+        - Claims
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: ../policies/PolicyDetails.v1.yaml
+              examples:
+                PolicyDetails:
+                  value:
+                    - policyId: 1
+                      policyName: Health
+                      Product:
+                        productId: 1
+                        productName: Credit Card
+                        productDescription: This is for credit card
+                      Preference:
+                        id: '123'
+                        details: Its user preference
+                      Address:
+                        addressId: 1
+                        address1: Electronic
+                        street: city
+                        city: Bangalore
+                        state: KA
+                        country: IND
+                        zip: '560000'
+                        Contact:
+                          mobile: 9999999999
+                          emailId: Messi@gmail.com
+                          phoneNumber: 9999999999
+                    - policyId: 2
+                      policyName: Health
+                      Product:
+                        productId: 1
+                        productName: Credit Card
+                        productDescription: This is for credit card
+                      Preference:
+                        id: '123'
+                        details: Its user preference
+                      Address:
+                        addressId: 1
+                        address1: Electronic
+                        street: city
+                        city: Bangalore
+                        state: KA
+                        country: IND
+                        zip: '560000'
+                        Contact:
+                          mobile: 9999999999
+                          emailId: Messi@gmail.com
+                          phoneNumber: 9999999999
+                    - policyId: 3
+                      policyName: Health
+                      Product:
+                        productId: 1
+                        productName: Credit Card
+                        productDescription: This is for credit card
+                      Preference:
+                        id: '123'
+                        details: Its user preference
+                      Address:
+                        addressId: 1
+                        address1: Electronic
+                        street: city
+                        city: Bangalore
+                        state: KA
+                        country: IND
+                        zip: '560000'
+                        Contact:
+                          mobile: 9999999999
+                          emailId: Messi@gmail.com
+                          phoneNumber: 9999999999
+                Policy Details schema:
+                  value:
+                    - policyId: 0
+                      policyName: string
+                      Product:
+                        productId: 0
+                        productName: string
+                        productDescription: string
+                      Preference:
+                        id: string
+                        details: string
+                      Address:
+                        addressId: 0
+                        address1: string
+                        street: string
+                        city: string
+                        state: string
+                        country: string
+                        zip: string
+                        Contact:
+                          mobile: 9999999999
+                          emailId: string
+                          phoneNumber: 0
+                PolicyDetails1:
+                  value:
+                    - policyId: 1
+                      policyName: Health
+                      Product:
+                        productId: 1
+                        productName: Credit Card
+                        productDescription: This is for credit card
+                      Preference:
+                        id: '123'
+                        details: Its user preference
+                      Address:
+                        addressId: 1
+                        address1: Electronic
+                        street: city
+                        city: Bangalore
+                        state: KA
+                        country: IND
+                        zip: '560000'
+                        Contact:
+                          mobile: 9999999999
+                          emailId: Messi@gmail.com
+                          phoneNumber: 9999999999
+      operationId: get-api-claim
+      description: get
+components:
+  schemas: {}
+tags:
+  - name: Claims

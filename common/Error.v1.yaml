@@ -1,0 +1,22 @@
+title: Error.v1
+type: object
+properties:
+  errorCode:
+    type: string
+    pattern: '^ERR-([4-5][0-9][0-9])$'
+    example: ERR-410
+    description: Code to identify the error
+  errorAttribute:
+    type: string
+    example: header.requestType
+    description: Parameter that error is pertaining to
+  errorDesc:
+    type: string
+    example: policyId is required.
+    description: brief description of the error
+x-examples:
+  Error:
+    errorCode: ERR-410
+    errorAttribute: header.requestType
+    errorDesc: policyId is required.
+description: Its Error data model contains Error info for failures.

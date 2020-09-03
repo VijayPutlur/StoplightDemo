@@ -1,0 +1,70 @@
+openapi: 3.0.0
+info:
+  title: ClaimsCreation.v1
+  version: '1.0'
+  description: Claims creation
+  contact:
+    name: vijay
+servers:
+  - url: 'http://localhost:3000'
+paths:
+  /api/claims/create:
+    post:
+      summary: ''
+      operationId: post-api-claims-create
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../policies/PolicyDetails.v1.yaml
+              examples:
+                Policy Details:
+                  value:
+                    policyId: 0
+                    policyName: string
+                    Product:
+                      productId: 0
+                      productName: string
+                      productDescription: string
+                    Preference:
+                      id: string
+                      details: string
+                    Address:
+                      addressId: 0
+                      address1: string
+                      street: string
+                      city: string
+                      state: string
+                      country: string
+                      zip: string
+                      Contact:
+                        mobile: 9999999999
+                        emailId: string
+                        phoneNumber: 0
+      description: post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ../claims/ClaimRequest.v1.yaml
+            examples:
+              Claim Request:
+                value:
+                  claimId: 0
+                  type: string
+                  status: string
+                  policyId: string
+                  ClaimInfo:
+                    id: 0
+                    'submissionDate:': '2019-08-24'
+                    gender: FEMALE
+                    dob: '2019-08-24'
+                    email: user@example.com
+      tags:
+        - Claims
+components:
+  schemas: {}
+tags:
+  - name: Claims

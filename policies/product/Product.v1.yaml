@@ -1,0 +1,21 @@
+title: product.v1
+type: object
+properties:
+  productId:
+    type: number
+  productName:
+    type: string
+  productDescription:
+    type: string
+required:
+  - productId
+x-examples:
+  Product:
+    productId: 1
+    productName: credit card
+    productDescription: Its a credit card
+  Product schema:
+    productId: 0
+    productName: string
+    productDescription: string
+description: Its Product data model contains Product info.

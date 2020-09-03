@@ -1,0 +1,33 @@
+title: Participant.v1
+type: object
+description: Policy Card participant details
+x-examples:
+  Participant:
+    participantId: '1'
+    ItemOrdinalNumberValue: '123'
+    givenName: Messi
+    familyName: Messi
+    businessPartnerID: '1'
+    priorityInd: true
+  Participant schema:
+    participantId: string
+    ItemOrdinalNumberValue: string
+    givenName: string
+    familyName: string
+    businessPartnerID: string
+    priorityInd: true
+properties:
+  participantId:
+    type: string
+  ItemOrdinalNumberValue:
+    type: string
+  givenName:
+    type: string
+  familyName:
+    type: string
+  businessPartnerID:
+    type: string
+  priorityInd:
+    type: boolean
+required:
+  - participantId

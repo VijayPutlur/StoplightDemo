@@ -1,0 +1,40 @@
+title: ClaimRequest
+type: object
+x-examples:
+  Claim Request:
+    claimId: 1
+    type: health
+    status: Received
+    policyId: '1'
+    ClaimInfo:
+      id: 0
+      'submissionDate:': '2019-08-24'
+      gender: FEMALE
+      dob: '2019-08-24'
+      email: Messi@gmail.com
+  Claim Request schema:
+    claimId: 0
+    type: string
+    status: string
+    policyId: string
+    ClaimInfo:
+      id: 0
+      'submissionDate:': '2019-08-24'
+      gender: FEMALE
+      dob: '2019-08-24'
+      email: user@example.com
+properties:
+  claimId:
+    type: number
+  type:
+    type: string
+  status:
+    type: string
+  policyId:
+    type: string
+  ClaimInfo:
+    $ref: ./ClaimInfo.v1.yaml
+required:
+  - claimId
+  - ClaimInfo
+description: Its a ClaimRequest data model and it contains Claim information

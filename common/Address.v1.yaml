@@ -1,0 +1,48 @@
+title: Address.v1
+type: object
+x-examples:
+  Address:
+    addressId: 0
+    address1: Electronic
+    street: city
+    city: Bangalore
+    state: Karnataka
+    country: India
+    zip: '560000'
+    Contact:
+      mobile: 9999999999
+      emailId: Messi@gmail.com
+      phoneNumber: 9999999999
+  Address schema:
+    addressId: 0
+    address1: string
+    street: string
+    city: string
+    state: string
+    country: string
+    zip: string
+    Contact:
+      mobile: 9999999999
+      emailId: string
+      phoneNumber: string
+description: Its Address data model contains Address info.
+properties:
+  addressId:
+    type: integer
+  address1:
+    type: string
+  street:
+    type: string
+  city:
+    type: string
+  state:
+    type: string
+  country:
+    type: string
+  zip:
+    type: string
+  Contact:
+    $ref: ./Contact.v1.yaml
+required:
+  - city
+  - state
