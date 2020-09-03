@@ -1,10 +1,16 @@
 openapi: 3.0.0
 info:
-  title: claims
+  title: ClaimsProcess
   version: '1.0'
   contact:
-    name: Messi
+    name: Medibank API Support
+    url: 'https://attraintegration.stoplight.io'
+    email: apisupport@medibank.com.au
   description: Its claims info
+  license:
+    url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
+    name: Apache 2.0
+  termsOfService: 'https://www.medibank.com.au/terms-and-conditions/'
 servers:
   - url: 'http://localhost:3000'
 paths:
@@ -66,7 +72,20 @@ paths:
                         mobile: 9999999999
                         emailId: string
                         phoneNumber: 0
-      description: update
+      description: |
+        <span style="font-size: 1.5em; color: #5D535E;">
+          <i class="fas fa-robot fa-xs"></i> Update claims
+        </span>
+
+        Update an existing Claim. A valid `'Claims Request'` is required for updating claim along with authentication.
+
+        More information about required parameters and authentication can be seen below.
+
+        ```bash
+        curl --request PUT \
+          --url https://medibankdemo.stoplight.io:5555/api/claim \
+          --data '{"claimId":0,"type":"string","status":"string","policyId":"string","ClaimInfo":{"id":0,"submissionDate:":"2019-08-24","gender":"FEMALE","dob":"2019-08-24","email":"user@example.com"}}'
+        ```
       requestBody:
         content:
           application/json:
@@ -123,7 +142,21 @@ paths:
                   value:
                     claimId: 0
                     status: string
-      description: delete
+      description: |-
+        <span style="font-size: 1.5em; color: #5D535E;">
+          <i class="fas fa-robot fa-xs"></i> Delete claims
+        </span>
+
+        Deletes claim for a claim id. A valid `'claimId'` is required to deleting the existing claim.
+
+        More information about required parameters and authentication can be seen below.
+
+        ```bash
+        curl --request DELETE \
+          --url https://attraintegration.stoplight.io:5555/api/claim \
+          --header 'claimid: '
+
+        ```
       parameters:
         - schema:
             type: number

@@ -1,10 +1,16 @@
 openapi: 3.0.0
 info:
-  title: ClaimsDemo.v1
+  title: ClaimsStatus.v1
   version: '1.0'
-  description: Claims Demo
+  description: Claims Status
   contact:
-    name: Vijay
+    name: Medibank API Support
+    email: apisupport@medibank.com.au
+    url: 'https://attraintegration.stoplight.io'
+  license:
+    url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
+    name: Apache 2.0
+  termsOfService: 'https://www.medibank.com.au/terms-and-conditions/'
 servers:
   - url: 'http://localhost:3000'
 paths:
@@ -135,7 +141,20 @@ paths:
                           emailId: Messi@gmail.com
                           phoneNumber: 9999999999
       operationId: get-api-claim
-      description: get
+      description: |-
+        <span style="font-size: 1.5em; color: #5D535E;">
+          <i class="fas fa-robot fa-xs"></i> Get/Fetch claims
+        </span>
+
+        Returns a list of claims for Claims.If specific claims are desired, users can specify the `'claimId'` or multiple thereof values in the header.
+
+        More information about required parameters and authentication can be seen below.
+
+        ```bash
+
+        curl --request GET \
+          --url https://medibankdemo.stoplight.io:5555/api/claim
+        ```
 components:
   schemas: {}
 tags:

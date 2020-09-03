@@ -4,13 +4,19 @@ info:
   version: '1.0'
   description: Claims creation
   contact:
-    name: vijay
+    name: Medibank API Support
+    email: apisupport@medibank.com.au
+    url: 'https://attraintegration.stoplight.io'
+  license:
+    url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
+    name: Apache 2.0
+  termsOfService: 'https://www.medibank.com.au/terms-and-conditions/'
 servers:
   - url: 'http://localhost:3000'
 paths:
   /api/claims/create:
     post:
-      summary: ''
+      summary: Claims Creation
       operationId: post-api-claims-create
       responses:
         '200':
@@ -43,7 +49,19 @@ paths:
                         mobile: 9999999999
                         emailId: string
                         phoneNumber: 0
-      description: post
+      description: |-
+        <span style="font-size: 1.5em; color: #5D535E;">
+          <i class="fas fa-robot fa-xs"></i> Create claims
+        </span>
+
+        Create a new Claim for the policy. A valid `'Claims Request'` is required for the creation of the Claims.
+        Below is the info on request and other info.
+
+        ```bash
+        curl --request POST \
+          --url https://medibankdemo.stoplight.io/api/claims/create \
+          --data '{"claimId":0,"type":"string","status":"string","policyId":"string","ClaimInfo":{"id":0,"submissionDate:":"2019-08-24","gender":"FEMALE","dob":"2019-08-24","email":"user@example.com"}}'
+        ```
       requestBody:
         content:
           application/json:
